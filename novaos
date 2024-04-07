@@ -80,14 +80,14 @@ installtools() { \
 	whiptail --title "Tools and other packages" --yesno "Would you like to install your system tools and other packages like htop, alsa-utils, gparted and more?" 8 60
 }
 
-installtools && yay --noconfirm --needed -Sy acpi alsa-utils htop intel-ucode light linux-firmware linux-headers meson neofetch neovim network-manager-applet pamixer pavucontrol pulseaudio-alsa pulseaudio-ctl xorg starship sof-firmware shell-color-scripts unzip xf86-video-intel xf86-video-vesa
+installtools && yay --noconfirm --needed -Sy acpi alsa-utils htop intel-ucode light linux-firmware linux-headers meson neofetch neovim network-manager-applet pamixer pavucontrol pulseaudio-alsa pulseaudio-ctl xorg starship sof-firmware shell-color-scripts unzip xf86-video-intel xf86-video-vesa wget
 
 
 installqtile() { \
 	whiptail --title "Window Managers - Qtile" --yesno "Would you like to install qtile?" 8 60
 }
 
-installqtile && yay --noconfirm --needed -Sy qtile qtile-extras python-psutil xss-lock rofi archolinux-logout betterlockscreen-git brightnessctl dunst lxappearance
+installqtile && yay --noconfirm --needed -Sy qtile qtile-extras python-psutil xss-lock rofi arcolinux-logout betterlockscreen-git brightnessctl dunst lxappearance
 
 
 installhyprland() { \
@@ -116,19 +116,19 @@ yay --noconfirm --needed -Sy ${CHOICES[@]}
 
 setupdotfiles(){ \
 	git clone https://github.com/Luka287/dotfiles.git ~/.dotfiles
-	ln -s ~/.dotfiles/.bashrc ~/.bashrc
-	ln -s ~/.dotfiles/.config/archlinux-betterlockscreen/ ~/.config/archlinux-betterlockscreen/ 
-	ln -s ~/.dotfiles/.config/archlinux-logout/ ~/.config/archlinux-logout/
-	ln -s ~/.dotfiles/.config/betterlockscreen/ ~/.config/betterlockscreen/
-	ln -s ~/.dotfiles/.config/dunst/ ~/.config/dunst/
-	ln -s ~/.dotfiles/.config/qtile/ ~/.config/qtile/
-	ln -s ~/.dotfiles/.config/rofi/ ~/.config/rofi/
-	ln -s ~/.dotfiles/.config/swaylock/ ~/.config/swaylock/
-	ln -s ~/.dotfiles/.config/waybar/ ~/.config/waybar/
-	ln -s ~/.dotfiles/.config/wlogout/ ~/.config/wlogout/
-	ln -s ~/.dotfiles/.config/wofi/ ~/.config/wofi/
-	ln -s ~/.dotfiles/.config/archlinux-logout.conf ~/.config/archlinux.conf
-	ln -s ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
+	ln -sn ~/.dotfiles/.bashrc ~/.bashrc
+	ln -sn ~/.dotfiles/.config/archlinux-betterlockscreen/ ~/.config/archlinux-betterlockscreen/ 
+	ln -sn ~/.dotfiles/.config/archlinux-logout/ ~/.config/archlinux-logout/
+	ln -sn ~/.dotfiles/.config/betterlockscreen/ ~/.config/betterlockscreen/
+	ln -sn ~/.dotfiles/.config/dunst/ ~/.config/dunst/
+	ln -sn ~/.dotfiles/.config/qtile/ ~/.config/qtile/
+	ln -sn ~/.dotfiles/.config/rofi/ ~/.config/rofi/
+	ln -sn ~/.dotfiles/.config/swaylock/ ~/.config/swaylock/
+	ln -sn ~/.dotfiles/.config/waybar/ ~/.config/waybar/
+	ln -sn ~/.dotfiles/.config/wlogout/ ~/.config/wlogout/
+	ln -sn ~/.dotfiles/.config/wofi/ ~/.config/wofi/
+	ln -sn ~/.dotfiles/.config/archlinux-logout.conf ~/.config/archlinux.conf
+	ln -sn ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
 } 
 
 dotfiles() { \
