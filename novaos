@@ -112,6 +112,34 @@ eval CHOICES=( $(whiptail --title "Tools to install" \
 yay --noconfirm --needed -Sy ${CHOICES[@]}
 
 
+
+
+setupdotfiles(){ \
+	git clone https://github.com/Luka287/dotfiles.git ~/.dotfiles
+	ln -s ~/.dotfiles/.bashrc ~/.bashrc
+	ln -s ~/.dotfiles/.config/archlinux-betterlockscreen/ ~/.config/archlinux-betterlockscreen/ 
+	ln -s ~/.dotfiles/.config/archlinux-logout/ ~/.config/archlinux-logout/
+	ln -s ~/.dotfiles/.config/betterlockscreen/ ~/.config/betterlockscreen/
+	ln -s ~/.dotfiles/.config/dunst/ ~/.config/dunst/
+	ln -s ~/.dotfiles/.config/qtile/ ~/.config/qtile/
+	ln -s ~/.dotfiles/.config/rofi/ ~/.config/rofi/
+	ln -s ~/.dotfiles/.config/swaylock/ ~/.config/swaylock/
+	ln -s ~/.dotfiles/.config/waybar/ ~/.config/waybar/
+	ln -s ~/.dotfiles/.config/wlogout/ ~/.config/wlogout/
+	ln -s ~/.dotfiles/.config/wofi/ ~/.config/wofi/
+	ln -s ~/.dotfiles/.config/archlinux-logout.conf ~/.config/archlinux.conf
+	ln -s ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
+} 
+
+dotfiles() { \
+	whiptail --title "Dotfiles" --yesno "Would you like to setup your dotfiles?" 8 60
+}
+
+
+dotfiles && setupdotfiles
+
+
+
 configsddm(){ \
 	yay --noconfirm --needed qt6-svg qt6-declarative wget unzip
 	wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
